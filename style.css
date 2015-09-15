@@ -13,7 +13,11 @@ h1{
 .navigationBar{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	background-image: url("navBarBackground.jpg");
+	background-image: url("navBarBackground.jg");
+	
+}
+.navigationBar li {
+	display: inline-block;
 }
 
 .heading p{
