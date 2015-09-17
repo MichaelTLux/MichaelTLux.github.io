@@ -1,26 +1,32 @@
 .wholeDoc {
-	background-color: rgb(255,215,0);
-	border: 4px solid yellow;
+	background-color: rgb(255,255,255);
+	border: 4px solid white;
 	padding-top: 10px;
 	margin-top: 0px;
 }
 
-h1{
-	color: red;
-	font-family: "Courier New", Courier, monospace;
-}
+
 
 .navigationBar{
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	background-image: url("navBarBackground.jg");
-	
+	font-size: 20px;
+	color: rgb(0,0,0);
 }
 .navigationBar li {
 	display: inline-block;
 }
 
-.heading p{
+.jumbotron p{
 	color: rbg(132, 50, 230);
 	font-family: "Times New Roman", Times, serif;
+	float: right;
 }
+.jumbotron h1{
+	font-family: "Courier New", Courier, monospace;
+	float: right;
+}
+.jumbotron img{
+	width: 10%;
+	height: auto;
+}
+
