@@ -1,8 +1,16 @@
 .wholeDoc {
 	background-color: rgb(255,255,255);
 }
-
+.brand-logo{
+	margin-left: 5%;
+}
 
 #pictureAndDescriptionRow{ /* how you reference ids */
 	margin-top: 10%;
 }
+
+#social_media .responsive-img{
+	width: 100%;
+	height: auto;
+}
+   
