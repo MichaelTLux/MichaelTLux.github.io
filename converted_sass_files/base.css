@@ -1,0 +1,30 @@
+/* Author Michael Lux */
+/*start of sass variables*/
+.titles {
+  font-family: "Domine", serif; }
+
+.wholeDoc {
+  background-color: white; }
+
+.brand-logo {
+  margin-left: 5%; }
+
+#pictureAndDescriptionRow {
+  margin-top: 10%; }
+
+#social_media .responsive-img {
+  width: 100%;
+  height: auto; }
+
+#mid_heading {
+  font-weight: bold;
+  font-style: oblique; }
+
+#job_name {
+  font-weight: lighter;
+  font-style: italic; }
+
+#skills_learned {
+  font-size: 200%; }
+
+/*# sourceMappingURL=base.css.map */
