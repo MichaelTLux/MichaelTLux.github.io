@@ -3,14 +3,18 @@
 
 /*start of sass variables*/
 $font-heading:    'Domine', serif;
-$font-content:	  'Montserrat', sans-serif;;
-$primary-color: #333;
+$font-content:	  'Montserrat', sans-serif;
 $page-color: rgb(255,255,255);
 
 
 .titles {
 	font-family: $font-heading;
 }
+
+.content{
+	font-family: $font-content;
+}
+
 .wholeDoc {
 	background-color: $page-color;
 }
