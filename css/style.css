@@ -211,14 +211,14 @@ ul.footer-links-ul li {
   .state-country-font {
     font-size: 2em; } }
 @media screen and (max-width: 720px) {
-  .parallax-internhacks, .parallax-googlejump {
+  .parallax-internhacks {
     display: inline-block;
     z-index: 0; } }
 @media screen and (max-width: 600px) {
   .state-country-font {
     font-size: 1em; }
 
-  .parallax-internhacks, .parallax-googlejump {
+  .parallax-internhacks {
     padding-top: 0; } }
 @font-face {
   font-family: geoBats;

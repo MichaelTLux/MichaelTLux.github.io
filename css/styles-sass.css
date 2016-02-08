@@ -122,28 +122,6 @@ ul.footer-links-ul li {
     .parallax-internhacks .parallax-text .btn, .parallax-googlejump .parallax-text .btn {
       text-shadow: initial; }
 
-@media screen and (min-width: 641px) {
-  .googlejump-replace {
-    background: url(../img/googlejump-large.jpeg); } }
-@media screen and (max-width: 640px) and (min-width: 400px) {
-  .googlejump-replace {
-    background: url(../img/googlejump-medium.jpeg); } }
-@media screen and (max-width: 399px) {
-  .googlejump-replace {
-    background: url(../img/googlejump-small.jpeg); } }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media screen and (min-width: 641px) {
@@ -151,10 +129,10 @@ ul.footer-links-ul li {
     background: url(../img/internhacks-large.jpeg); } }
 @media screen and (max-width: 640px) and (min-width: 400px) {
   .internhacks-replace {
-    background: url(../img/internhacks-medium.jpeg); } }
+    background: url(../img/internhacks-large.jpeg); } }
 @media screen and (max-width: 399px) {
   .internhacks-replace {
-    background: url(../img/internhacks-small.jpeg); } }
+    background: url(../img/internhacks-large.jpeg); } }
 
 .parallax-replace-on-small {
   background-repeat: no-repeat !important;
@@ -218,7 +196,7 @@ ul.footer-links-ul li {
       background: url(../img/bg-large.jpg); } }
   @media screen and (max-width: 640px) and (min-width: 400px) {
     .splash {
-      background: url(../img/bg-medium.jpg); } }
+      background: url(../img/bg-large.jpg); } }
   @media screen and (max-width: 399px) {
     .splash {
       background: url(../img/bg-small.jpg); } }
@@ -244,14 +222,14 @@ ul.footer-links-ul li {
   .state-country-font {
     font-size: 2em; } }
 @media screen and (max-width: 720px) {
-  .parallax-internhacks, .parallax-googlejump {
+  .parallax-internhacks {
     display: inline-block;
     z-index: 0; } }
 @media screen and (max-width: 600px) {
   .state-country-font {
     font-size: 1em; }
 
-  .parallax-internhacks, .parallax-googlejump {
+  .parallax-internhacks {
     padding-top: 0; } }
 @font-face {
   font-family: geoBats;
