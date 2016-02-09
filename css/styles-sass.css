@@ -199,7 +199,7 @@ ul.footer-links-ul li {
       background: url(../img/bg-large.jpg); } }
   @media screen and (max-width: 399px) {
     .splash {
-      background: url(../img/bg-small.jpg); } }
+      background: url(../img/bg-large.jpg); } }
 
 .state-country-font {
   background: -webkit-linear-gradient(#eee, #333);
