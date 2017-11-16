@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <meta charset="UTF-8">
+  <title>Konflict 47 Game Helper</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row" style="margin-left: 1em;">
+      <!-- <div id="one-shot-area" class="">
+                <h1>One Shot dice</h1>
+                <ul id="one-shot-list">
+                </ul>
+            </div> -->
+      <div>
+        <label for="all-names">Enter All Names With commas between each</label>
+        <input name="all-names" id="all-names" type="text" value="Michael, Danner, Phil">
+        <button onclick="generateGame()">GenerateGame</button>
+      </div>
+      <br/>
+      <h3>Player turn management</h3>
+      <div id="unit-counts"></div>
+      <br/>
+      <div id="remaining-turns"></div>
+      <br/>
+      <h4>Remove turns</h4>
+      <div id="remove-turns"></div>
+      <br/>
+      <h4>Add turns</h4>
+      <div id="add-turns"></div>
+      <br/>
+      <div>
+        <h3>Current Turn</h3>
+        <div>
+          <button onclick="pick()">Next Turn</button>
+          <Label for "current-turn">This turn is:</label><input name="current-turn" id="current-turn" type="text" value="0" disabled="true" />
+        </div>
+        <div id="timer">
+          <Label for "remaining-time"><b>Time Remaining</b></label>
+          <input name="remaining-time" id="remaining-time" type="text" value="60" />
+          <button onclick="stopTimer()">Stop Timer</button>
+        </div>
+      </div>
+      <div>
+        <h3>Attacking</h3>
+        <div>
+          <div>
+            <label for="number-of-shots">Number Of Shots</label>
+            <input name="number-of-shots" id="number-of-shots" type="text" value="0">
+            <p id="shot-dice-rolled"></p>
+          </div>
+          <div>
+            <label for="hitting-on">Hitting On</label>
+            <input name="hitting-on" id="hitting-on" type="text" value="0">
+            <p id="shots-hit"></p>
+          </div>
+          <div>
+            <label for="killing-on">Killing On</label>
+            <input name="killing-on" id="killing-on" type="text" value="0">
+            <p id="kill-rolls"></p>
+            <p id="kill-hits"></p>
+            <p id="nco-attempt"></p>
+            <p id="dead-nco"></p>
+          </div>
+          <div>
+            <button onclick="attack()"><b>FIRE!!!</b></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<!-- <script>
+    function makeBoon(title, description){
+        return {
+            title: title,
+            description: description+ "\n"
+        }
+    }
+
+    var oneShotArray = [
+        makeBoon("Jack of all trades","Take a feat. All your stats increase by two then round up to become even (ignoring limits)"),
+        makeBoon("Transcendence","one of your scores of 20 becomes 26"),
+        makeBoon("Flight of the Gods","You gain a flight speed of 60 feet (flavored as you want like at will flight wings). Also, you can negate any 'legendary' action (like legendary resistance) as a reaction on your turn"),
+        makeBoon("Blessings of knowledge","gain a level in a class you have that isnt at max. It goes up an additional level, gaining all relevant features of that level (except Hit Dice, Hit Points and proficiencies"),
+        makeBoon("Speed of Pegasus","Once a day your body can tap into a rush of energy (for a minute), during this time your speed is doubled and you gain a +2 bonus to AC, you also have advantage on Dexterity saving throws, and you gain an additional action on each of your turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action. When your minute runs out you gain one level of exhaustion from the strain on your body. Finally, you gain also proficiency in all Dexterityskill checks, and if you already have proficiency in such a skill, the proficiency bonus is doubled."),
+        makeBoon("Strength of the Mountain","You become immovable, you get +10 to checks against being shoved, shoved aside, overrun, or being knocked prone. Additionally, your max HP is permanently increased by 8d10. Strength is effectively quintupled when attempting tasks and your strength score increases by 2."),
+        makeBoon("Hands of Lindsey Cornwallis","you become able to craft anything you put your mind to. You just need the right materiels and time (chosen by the DM)."),
+        makeBoon("Perfected Body","You no longer need to eat, drink, or breath. Additionally, you no longer age. Finally, you are immune to disease, poison damage, and the poisoned condition."),
+        makeBoon("Shield of unbending Will","+2 bonus to AC and you cannot be charmed or possessed"),
+        makeBoon("Gift of Tongues","you learn to read and speak ALL languages, including code. Additionally you can proficiency (expertise if you already are proficient) in Deception, Persuasion, and Intimidation. Also, you can always tell when a creature is lieing. On top of that, you can make a contested intimidation vs insight check to force a creature to answer a question for you."),
+        makeBoon("Eldritch Vision","Your eyes now glow with celestial light, allowing you to see what others might not notice. Your eyes gain the effect of one of the following spells at all times: darkvision, detect evil and good, detect magic, or detect poison and disease, without using a spell slot or any components, you also can change the type of the effect by spending a free action. You can also cast the arcane eye spell once a day. You are able to see using your eyes even when they are obscured by any kind of item, such as a piece of cloth."),
+        makeBoon("Curse Reflection","You cannot be cursed, and you can voluntarily end attunement with cursed items. In addition, when you are using a cursed item you are attuned to, one creature you choose within 120 feet of you suffers the effects of the curse instead. Finally, you can redirect the effects of a spell targeting you to another creature within 120 feet once a day"),
+        makeBoon("Unsurpassed quickness","you get two bonus actions and two reactions every turn"),
+        makeBoon("Unending ferocity","You have advantage on all Dexterity saving throws, and you gain an additional action on each of your turns. That action can only be used to take the Attack (one weapon attack only), Dash, Disengage, Hide or Use an Object action."),
+        makeBoon("Recharging","while in combat roll a 1d6 at the beginning of your turn. if a 5 or 6 recharge a resource (DM discretion)"),
+        makeBoon("Hide of the Tarrasque","Any time you are targeted by a Magic Missile spell, a line spell, or a spell that requires a ranged Attack roll, roll a d6. On a 1 to 5, you are unaffected. On a 6, you are unaffected, and the effect is reflected back at the caster as though it originated from you, turning the caster into the target."),
+        makeBoon("Immortality","Your constitution max increases by 4 and your constitution score increases by 4. Additionally, you have advantage on all constitution saving throws. Finally, if you are reduced to 0 hp instead make a constitution save against a DC of half the the damage taken to cause you to reach 0 Hp. On success, you have 1 HP instead."),
+        makeBoon("Elemental Attunment","During a long rest pick one element type. You are now immune to that type of damage and you can also use an action to cast a variant of the burning hands spell (spell save DC 15) that deals that type of damage instead of fire damage at will, without using a spell slot or any components."),
+        makeBoon("Gift of healing","while in the heat of battle you can cast cure wounds (lv 5) at will, without using a spell slot or any components."),
+        makeBoon("Pack Leader","You can now cast find familiar , without using a spell slot or any components. Your familiar gains the following benifits: Your familiar's hit point maximum is the higher of its hit point maximum or half of your hit point maximum (rounded down). Your familiar's AC increases by an amount equal to your proficiency bonus. The familiar can now maintain a caster's concentration, allowing the caster to cast a second similar spell. The familiar gains the ability to speak and understand Common if it does not already. Your familiar can be a Medium or smaller beast with a maximum challenge rating of 1.")
+    ];
+
+    $( document ).ready(function() {
+        var adding = "<ul>";
+
+        for(var i =0; i<oneShotArray.length; i++) {
+            var tmp = i+1;
+            adding +="<li>"+ tmp + ": " + oneShotArray[i].title + ": "+ oneShotArray[i].description +"</li>";
+        }
+        adding+= "</ul>";
+        $("#one-shot-area").append(adding);
+    });
+</script> -->
+<script>
+  var shouldSpeak = true;
+</script>
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+<script src="js/turnOrder.js"></script>
+<script src="js/generateGame.js"></script>
+<script src="js/attack.js"></script>
+<script src="js/timer.js"></script>
