@@ -53,5 +53,3 @@ function generateRemoveTurnsButtons(array) {
     });
     removeTurnsDiv.innerHTML = newHtml;
 }
-
-// <button onclick="addAnna()">Add Anna</button>

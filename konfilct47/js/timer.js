@@ -7,6 +7,7 @@ var runId = 0;
 async function startTimer() {
     timeInput = document.getElementById('remaining-time');
     runId++
+    updateSpeaking();
     var startId = runId;
     var timePerTurn;
     if (timeRemaining >= 0) {
@@ -39,10 +40,6 @@ async function startTimer() {
 async function stopTimer() {
     timeRemaining = -1;
     await sleep(1000);
-}
-
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function handleSpeach(time) {

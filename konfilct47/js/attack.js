@@ -44,11 +44,3 @@ function rollAllAndReport(totalChances, elementToModifyId) {
     }
     return allRolls;
 }
-
-function rollD6() {
-    return Math.round(getRandomArbitrary(1, 6));
-}
-
-function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}

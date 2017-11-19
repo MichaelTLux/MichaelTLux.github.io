@@ -2,6 +2,7 @@ var units = [];
 var allNames = [];
 
 function pick(array) {
+    updateSpeaking();
     var whatToRemove = getRandomArbitrary(0, units.length);
     var item = units.splice(whatToRemove, 1)[0];
     updateTurns();
@@ -76,10 +77,6 @@ function getTurns(regularExpression, units) {
 function addTurnForName(name) {
     units = units.concat(generateUnitsArray(name, 1));
     updateTurns();
-}
-
-function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
 }
 
 function getAllNames() {

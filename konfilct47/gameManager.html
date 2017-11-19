@@ -2,80 +2,95 @@
 <html lang="en">
 
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="css/main.css" />
-  <meta charset="UTF-8">
-  <title>Konflict 47 Game Helper</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <meta charset="UTF-8">
+    <title>Konflict 47 Game Helper</title>
 </head>
 
 <body>
-  <div class="container">
-    <div class="row" style="margin-left: 1em;">
-      <!-- <div id="one-shot-area" class="">
+    <div class="container">
+        <div class="row" style="margin-left: 1em;">
+            <!-- <div id="one-shot-area" class="">
                 <h1>One Shot dice</h1>
                 <ul id="one-shot-list">
                 </ul>
             </div> -->
-      <div>
-        <label for="all-names">Enter All Names With commas between each</label>
-        <input name="all-names" id="all-names" type="text" value="Michael, Danner, Phil">
-        <button onclick="generateGame()">GenerateGame</button>
-      </div>
-      <br/>
-      <h3>Player turn management</h3>
-      <div id="unit-counts"></div>
-      <br/>
-      <div id="remaining-turns"></div>
-      <br/>
-      <h4>Remove turns</h4>
-      <div id="remove-turns"></div>
-      <br/>
-      <h4>Add turns</h4>
-      <div id="add-turns"></div>
-      <br/>
-      <div>
-        <h3>Current Turn</h3>
-        <div>
-          <button onclick="pick()">Next Turn</button>
-          <Label for "current-turn">This turn is:</label><input name="current-turn" id="current-turn" type="text" value="0" disabled="true" />
+            <div>
+                <label for="all-names">Enter All Names With commas between each</label>
+                <input name="all-names" id="all-names" type="text" value="Michael, Danner, Phil">
+                <button onclick="generateGame()">GenerateGame</button>
+            </div>
+            <div>
+                <label for="should-speak">Check to have speaking</label><input name="should-speak" id="should-speak" type="checkbox" checked="true">
+            </div>
+            <br/>
+            <h3>Player turn management</h3>
+            <div id="unit-counts"></div>
+            <br/>
+            <div id="remaining-turns"></div>
+            <br/>
+            <h4>Remove turns</h4>
+            <div id="remove-turns"></div>
+            <br/>
+            <h4>Add turns</h4>
+            <div id="add-turns"></div>
+            <br/>
+            <div>
+                <h3>Current Turn</h3>
+                <div>
+                    <button onclick="pick()">Next Turn</button>
+                    <Label for "current-turn">This turn is:</label><input name="current-turn" id="current-turn" type="text" value="0" disabled="true" />
+                </div>
+                <div id="timer">
+                    <Label for "remaining-time"><b>Time Remaining</b></label>
+                    <input name="remaining-time" id="remaining-time" type="text" value="60" />
+                    <button onclick="stopTimer()">Stop Timer</button>
+                </div>
+            </div>
+            <div>
+                <h3>Moral</h3>
+                <div>
+                    <button onclick="moralCheck()">Moral Check</button>
+                </div>
+                <div>
+                    <p>Dice Rolled:</p>
+                    <p id="dice-rolled"></p>
+                    <p id="fubar"></p>
+                    <p id="fubar-description"></p>
+                </div>
+            </div>
+            <div>
+                <h3>Attacking</h3>
+                <div>
+                    <div>
+                        <label for="number-of-shots">Number Of Shots</label>
+                        <input name="number-of-shots" id="number-of-shots" type="text" value="0">
+                        <p id="shot-dice-rolled"></p>
+                    </div>
+                    <div>
+                        <label for="hitting-on">Hitting On</label>
+                        <input name="hitting-on" id="hitting-on" type="text" value="0">
+                        <p id="shots-hit"></p>
+                    </div>
+                    <div>
+                        <label for="killing-on">Killing On</label>
+                        <input name="killing-on" id="killing-on" type="text" value="0">
+                        <p id="kill-rolls"></p>
+                        <p id="kill-hits"></p>
+                        <p id="nco-attempt"></p>
+                        <p id="dead-nco"></p>
+                    </div>
+                    <div>
+                        <button onclick="attack()"><b>FIRE!!!</b></button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="timer">
-          <Label for "remaining-time"><b>Time Remaining</b></label>
-          <input name="remaining-time" id="remaining-time" type="text" value="60" />
-          <button onclick="stopTimer()">Stop Timer</button>
-        </div>
-      </div>
-      <div>
-        <h3>Attacking</h3>
-        <div>
-          <div>
-            <label for="number-of-shots">Number Of Shots</label>
-            <input name="number-of-shots" id="number-of-shots" type="text" value="0">
-            <p id="shot-dice-rolled"></p>
-          </div>
-          <div>
-            <label for="hitting-on">Hitting On</label>
-            <input name="hitting-on" id="hitting-on" type="text" value="0">
-            <p id="shots-hit"></p>
-          </div>
-          <div>
-            <label for="killing-on">Killing On</label>
-            <input name="killing-on" id="killing-on" type="text" value="0">
-            <p id="kill-rolls"></p>
-            <p id="kill-hits"></p>
-            <p id="nco-attempt"></p>
-            <p id="dead-nco"></p>
-          </div>
-          <div>
-            <button onclick="attack()"><b>FIRE!!!</b></button>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </body>
 
 </html>
@@ -121,11 +136,10 @@
         $("#one-shot-area").append(adding);
     });
 </script> -->
-<script>
-  var shouldSpeak = true;
-</script>
 <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+<script src="js/helpers.js"></script>
 <script src="js/turnOrder.js"></script>
 <script src="js/generateGame.js"></script>
 <script src="js/attack.js"></script>
 <script src="js/timer.js"></script>
+<script src="js/moral.js"></script>
