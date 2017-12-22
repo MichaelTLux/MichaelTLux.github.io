@@ -1,8 +1,9 @@
 function moralCheck() {
     var diceRollOne = rollD6();
     var diceRollTwo = rollD6();
+    var unique = getRandomArbitrary(1, 100);
     var total = diceRollOne + diceRollTwo;
-    byId('dice-rolled').innerHTML = `${diceRollOne}, ${diceRollTwo}: Total: ${total}`;
+    byId('dice-rolled').innerHTML = `${diceRollOne}, ${diceRollTwo}: Total: ${total} Unique: ${unique}`;
     if (total === 12) {
         var fubarRoll = rollD6();
         var fubarType = "";
