@@ -47,9 +47,9 @@ const replacementFunction = (replacementText) => {
             replacement: '$1ul$3'
         },
         {
-            matcher: /(\[strong\]|\[\/strong\])/g,
-            replacement: ''
-        }
+            matcher: /(\[\/?)(strong)(\])/g,
+            replacement: '$1b$3'
+        },
     ];
 
     replacementMap.forEach(({matcher, replacement}) => {
