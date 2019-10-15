@@ -35,6 +35,10 @@ const replacementFunction = (replacementText) => {
             replacement: ' '
         },
         {
+            matcher: /&amp;/g,
+            replacement: '&'
+        },
+        {
             matcher: /\[em\](.+?)\[\/em\]/g,
             replacement: '[i]$1[/i]'
         },
