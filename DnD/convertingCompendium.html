@@ -5,6 +5,26 @@
     <title>Converting Compendium</title>
 </head>
 <body>
-<h1>Converting Compendium</h1>
+    <h1>Converting Compendium</h1>
+    <ol>
+        <li>
+            Copy the text from the compendium
+        </li>
+        <li>
+            Paste the result into the converter <a href="https://html-cleaner.com/">here</a>. Then click "Clean HTML." Copy the resulting html
+        </li>
+        <li>
+            Paste the text into the converter <a href="https://wordtohtml.net/">here</a> and do large formatting changes on the left side. Then copy the remaining HTML.
+        </li>
+        <li>
+            Paste the html into this textbox:
+            <textarea id="cleaned-html"></textarea>
+            <button onclick="convertTextBoxToBBCode()">Convert</button>
+        </li>
+
+    </ol>
+    <span>Output:</span>
+    <textarea id="bbcode-output"></textarea>
 </body>
+<script src="js/scrubAndConvertToBBCode.js"></script>
 </html>
