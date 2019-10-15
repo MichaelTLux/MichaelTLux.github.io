@@ -41,6 +41,10 @@ const replacementFunction = (replacementText) => {
         {
             matcher: /(\[\/?)(ol)(\])/g,
             replacement: '$1ul$3'
+        },
+        {
+            matcher: /(\[strong\]|\[\/strong\])/g,
+            replacement: ''
         }
     ];
 
