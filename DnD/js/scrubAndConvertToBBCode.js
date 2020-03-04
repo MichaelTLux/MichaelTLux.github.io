@@ -98,8 +98,8 @@ const addLinks = (replacementText) => {
         {
             matcher: /Naomi/,
             replacement: '[url:https://www.worldanvil.com/w/the-fogs-mlux/a/naomi-venstrum-article]Naomi[/url]'
-        }
-         {
+        },
+        {
             matcher: /Robin/,
             replacement: '[url:https://www.worldanvil.com/w/the-fogs-mlux/a/robin-stormcaller-article]Robin[/url]'
         }
