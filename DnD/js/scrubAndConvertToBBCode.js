@@ -102,7 +102,7 @@ const addLinks = (replacementText) => {
         {
             matcher: /Robin/,
             replacement: '[url:https://www.worldanvil.com/w/the-fogs-mlux/a/robin-stormcaller-article]Robin[/url]'
-        }
+        },
     ];
 
     replacementMap.forEach(({matcher, replacement}) => {
