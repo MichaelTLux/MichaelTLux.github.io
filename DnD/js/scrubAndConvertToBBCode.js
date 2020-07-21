@@ -260,8 +260,8 @@ const addLinks = (replacementText) => {
             replacement: '[https://www.worldanvil.com/w/the-fogs-mlux/a/dewey-article]Dewey[/url]'
         },
         {
-            matcher: /Imodithius/,
-            replacement: '[https://www.worldanvil.com/w/the-fogs-mlux/a/imodithius-article]Imodithius[/url]'
+            matcher: /Illudithius/,
+            replacement: '[https://www.worldanvil.com/w/the-fogs-mlux/a/illudithius-article]Illudithius[/url]'
         },
         {
             matcher: /Kratos/,
